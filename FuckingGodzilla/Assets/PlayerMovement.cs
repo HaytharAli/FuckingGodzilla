@@ -11,7 +11,15 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         movement.x = Input.GetAxis("P1LS_hori");
+        if(movement.x < 0.05f && movement.x > -0.05f)
+        {
+            movement.x = 0;
+        }
         movement.z = Input.GetAxis("P1LS_vert");
+        if (movement.z < 0.05f && movement.z > -0.05f)
+        {
+            movement.z = 0;
+        }
     }
 
     void FixedUpdate()
