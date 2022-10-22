@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class FireCommand : CommandAbstract
 {
-
+    public override void execute()
+    {
+        //Execute the player's fire command
+    }
 }
