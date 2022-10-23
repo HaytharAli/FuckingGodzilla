@@ -36,7 +36,7 @@ public class CartersController : MonoBehaviour
     {
         onRoundStart += returnToSpawn;
         EventChad.instance.onRoundStart.AddListener(onRoundStart);
-        inputThang = gameObject.AddComponent<InputSupervisor>();
+        inputThang = gameObject.GetComponent<InputSupervisor>();
     }
 
     public void Movement(Vector3 thumbstick)
@@ -149,9 +149,9 @@ public class CartersController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Piss Baby");
         if(collision.gameObject.tag == "bullet")
         {
+            Debug.Log("Piss Baby");
             inputThang.stopInput();
         }
     }

@@ -18,7 +18,7 @@ public class InputSupervisor : MonoBehaviour
 
     bool freshlySpawned = true;
 
-    bool takeInput = true;
+    [SerializeField] bool takeInput = true;
 
     private void Start()
     {
@@ -64,27 +64,28 @@ public class InputSupervisor : MonoBehaviour
             aiming.z = Input.GetAxis(rightHorizontal);
             aiming.x = -Input.GetAxis(rightVertical);
             RT = Input.GetAxis(rightTrigger);
-        }
 
-        if(movement.magnitude > 0)
-        {
-            moveCommand.execute(movement);
-            timeline.record(moveCommand, movement);
-        }
-        if(RT > 0.8)
-        {
-            fireCommand.execute();
-            timeline.record(fireCommand);
-        }
-        if(aiming.magnitude > 0)
-        {
-            aimCommand.execute(aiming);
-            timeline.record(aimCommand, aiming);
+            if (movement.magnitude > 0)
+            {
+                moveCommand.execute(movement);
+                timeline.record(moveCommand, movement);
+            }
+            if (RT > 0.8)
+            {
+                fireCommand.execute();
+                timeline.record(fireCommand);
+            }
+            if (aiming.magnitude > 0)
+            {
+                aimCommand.execute(aiming);
+                timeline.record(aimCommand, aiming);
+            }
         }
     }
 
     public void stopInput()
     {
+        Debug.Log("Stopping input on Player " + characterNumber);
         if (freshlySpawned)
         {
             freshlySpawned = false;
