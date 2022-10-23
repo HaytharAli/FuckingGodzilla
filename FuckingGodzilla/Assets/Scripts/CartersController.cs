@@ -30,11 +30,13 @@ public class CartersController : MonoBehaviour
     Vector3 spawnPoint = Vector3.zero;
 
     UnityAction onRoundStart;
+    InputSupervisor inputThang;
 
     private void Start()
     {
         onRoundStart += returnToSpawn;
         EventChad.instance.onRoundStart.AddListener(onRoundStart);
+        inputThang = gameObject.AddComponent<InputSupervisor>();
     }
 
     public void Movement(Vector3 thumbstick)
@@ -89,12 +91,18 @@ public class CartersController : MonoBehaviour
 
         float currentTime = 0.0f;
 
-        while (currentTime < bulletLifetime) {
-            Vector3 pos = new Vector3(Mathf.Lerp(startPos.x, targetPos.x, currentTime / bulletLifetime),
-                Mathf.Lerp(startPos.y, targetPos.y, currentTime / bulletLifetime),
-                Mathf.Lerp(startPos.z, targetPos.z, currentTime / bulletLifetime));
+        Vector3 force = muzzle.transform.right;
+        force = force.normalized * 5000;
 
-            bulletClone.transform.position = pos;
+        bulletClone.transform.position = muzzle.transform.position;
+        bulletClone.GetComponent<Rigidbody>().AddForce(force);
+
+        while (currentTime < bulletLifetime) {
+            //Vector3 pos = new Vector3(Mathf.Lerp(startPos.x, targetPos.x, currentTime / bulletLifetime),
+            //    Mathf.Lerp(startPos.y, targetPos.y, currentTime / bulletLifetime),
+            //    Mathf.Lerp(startPos.z, targetPos.z, currentTime / bulletLifetime));
+
+            //bulletClone.transform.position = pos;
 
 
             if (currentTime > 0.25f && !oneTimeCheck)
@@ -137,5 +145,14 @@ public class CartersController : MonoBehaviour
             spawnPoint.x = 8;
         }
         transform.position = spawnPoint;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("Piss Baby");
+        if(collision.gameObject.tag == "bullet")
+        {
+            inputThang.stopInput();
+        }
     }
 }

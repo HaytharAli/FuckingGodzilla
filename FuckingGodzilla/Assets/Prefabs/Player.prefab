@@ -215,7 +215,6 @@ GameObject:
   - component: {fileID: 1289729341122243850}
   - component: {fileID: 8789991362851943319}
   - component: {fileID: 1737572161784292248}
-  - component: {fileID: 5310046945468421946}
   m_Layer: 0
   m_Name: Collision
   m_TagString: Untagged
@@ -288,19 +287,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5310046945468421946
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2778680106878589170}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3576251337579359783
 GameObject:
   m_ObjectHideFlags: 0
@@ -840,6 +826,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8496529841873254373}
   - component: {fileID: 8496529841873254394}
+  - component: {fileID: 9159732719291079959}
+  - component: {fileID: 1644968282500706417}
+  - component: {fileID: 7255031483806840985}
+  - component: {fileID: 940086887816072393}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -882,5 +872,59 @@ MonoBehaviour:
   maxBullets: 16
   footsteps: {fileID: 0}
   playerNumber: 1
+  characterNumber: 1
   muzzle: {fileID: 6494672985068151545}
   bulletTarget: {fileID: 523881948207208650}
+--- !u!114 &9159732719291079959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8496529841873254395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b8b9953465fc0d49a6272c0b817caba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1644968282500706417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8496529841873254395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70ed884f991675847b635acbb21bd09f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &7255031483806840985
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8496529841873254395}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &940086887816072393
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8496529841873254395}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 4
+  m_CollisionDetection: 0

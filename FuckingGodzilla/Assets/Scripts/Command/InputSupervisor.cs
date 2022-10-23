@@ -16,6 +16,8 @@ public class InputSupervisor : MonoBehaviour
 
     Vector3 movement, aiming;
 
+    bool freshlySpawned = true;
+
     bool takeInput = true;
 
     private void Start()
@@ -83,6 +85,11 @@ public class InputSupervisor : MonoBehaviour
 
     public void stopInput()
     {
+        if (freshlySpawned)
+        {
+            freshlySpawned = false;
+            return;
+        }
         takeInput = false;
     }
 }
