@@ -15,8 +15,8 @@ public class CartersController : MonoBehaviour
 
     [SerializeField] AudioClipRandomizer footsteps;
 
-    [SerializeField] int playerNumber = 1;
-    [SerializeField] int characterNumber = 1;
+    [SerializeField] int playerNumber;
+    [SerializeField] int characterNumber;
 
     [SerializeField] GameObject muzzle;
     [SerializeField] GameObject bulletTarget;
