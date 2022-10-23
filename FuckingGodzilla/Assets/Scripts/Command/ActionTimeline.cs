@@ -42,14 +42,14 @@ public class ActionTimeline : MonoBehaviour
 
     public void record(CommandAbstract command, Vector3 direction)
     {
-        ActionInstance instance = new ActionInstance();
+        ActionInstance instance = ScriptableObject.CreateInstance<ActionInstance>();
         instance.record(command, direction);
         actions.Add(instance);
     }
 
     public void record(CommandAbstract command)
     {
-        ActionInstance instance = new ActionInstance();
+        ActionInstance instance = ScriptableObject.CreateInstance<ActionInstance>();
         instance.record(command);
         actions.Add(instance);
     }

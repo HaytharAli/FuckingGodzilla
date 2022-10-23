@@ -25,32 +25,14 @@ public class CartersController : MonoBehaviour
     int bulletCount = 0;
     bool gunCooldown = false;
 
-    void Start()
-    {
-        axisName = "P" + playerNumber;
-    }
-
-    void Update()
-    {
-        Movement();
-
-        Aiming();
-        
-        if (Input.GetAxis(axisName + "_RT") == -1)
-        {
-            Fire();
-        }
-        
-    }
-
-    public void Movement(Vector3 bitch)
+    public void Movement(Vector3 thumbstick)
     {
         Vector3 oldPos = transform.position;
 
         transform.position = new Vector3(
-        transform.position.x + (bitch.x * playerSpeed * Time.deltaTime),
+        transform.position.x + (thumbstick.x * playerSpeed * Time.deltaTime),
         transform.position.y,
-        transform.position.z + (-1.0f * bitch.z * playerSpeed * Time.deltaTime));
+        transform.position.z + (thumbstick.z * playerSpeed * Time.deltaTime));
 
         if (oldPos == transform.position)
             isMoving = true;
@@ -66,11 +48,7 @@ public class CartersController : MonoBehaviour
 
     public void Fire()
     {
-        if (gunCooldown)
-        {
-            return;
-        }
-        if (bulletCount >= maxBullets)
+        if (gunCooldown || bulletCount >= maxBullets)
         {
             return;
         }
@@ -123,5 +101,10 @@ public class CartersController : MonoBehaviour
         bulletCount--;
 
         yield break;
+    }
+
+    public int PlayerNumber
+    {
+        get => playerNumber;
     }
 }

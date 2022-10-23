@@ -4,24 +4,29 @@ using UnityEngine;
 
 public class InputSupervisor : MonoBehaviour
 {
-    public ActionTimeline timeline;
+    ActionTimeline timeline;
+    CartersController controller;
 
     MovementCommand moveCommand;
     FireCommand fireCommand;
     AimCommand aimCommand;
 
-    public int playerNumber = 1;
+    int playerNumber = 1;
     string leftHorizontal, leftVertical, rightHorizontal, rightVertical, rightTrigger;
 
     Vector3 movement, aiming;
 
     private void Start()
     {
-        moveCommand = new MovementCommand();
-        fireCommand = new FireCommand();
-        aimCommand = new AimCommand();
+        timeline = gameObject.GetComponent<ActionTimeline>();
+        controller = GameObject.Find("Player 1").GetComponent<CartersController>();
+        playerNumber = controller.PlayerNumber;
 
-        if(playerNumber == 1)
+        moveCommand = ScriptableObject.CreateInstance<MovementCommand>();
+        fireCommand = ScriptableObject.CreateInstance<FireCommand>();
+        aimCommand = ScriptableObject.CreateInstance<AimCommand>();
+
+        if (playerNumber == 1)
         {
             leftHorizontal = "P1LS_hori";
             leftVertical = "P1LS_vert";
@@ -38,21 +43,16 @@ public class InputSupervisor : MonoBehaviour
             rightVertical = "P2RS_vert";
             rightTrigger = "P2RT";
         }
-
-        moveCommand = new MovementCommand();
     }
 
     // Update is called once per frame
     void Update()
     {
-        float LSX = Input.GetAxis(leftHorizontal);
-        float LSY = Input.GetAxis(leftVertical);
-        float RSX = Input.GetAxis(rightHorizontal);
-        float RSY = Input.GetAxis(rightVertical);
+        movement.x = Input.GetAxis(leftHorizontal);
+        movement.z = Input.GetAxis(leftVertical);
+        aiming.x = Input.GetAxis(rightHorizontal);
+        aiming.z = Input.GetAxis(rightVertical);
         float RT = Input.GetAxis(rightTrigger);
-
-        movement = new Vector3(LSX, 0, LSY);
-        aiming = new Vector3(RSX, 0, RSY);
 
         if(movement.magnitude > 0)
         {
