@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Mainfuckingmenu.unity
+    guid: a736ac7876e2a0d489a57ba51aac13db
+  - enabled: 1
+    path: Assets/Scenes/Carter Fuckery.unity
+    guid: 19fc31a7b4366f64e87067aabef866d1
   m_configObjects: {}

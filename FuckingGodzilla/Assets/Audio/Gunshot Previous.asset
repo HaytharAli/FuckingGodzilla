@@ -12,14 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1270013d8273c443af3f7364aef979e, type: 3}
   m_Name: Gunshot Previous
   m_EditorClassIdentifier: 
-  _audioClips: []
-  _mixerGroup: {fileID: 0}
+  _audioClips:
+  - {fileID: 8300000, guid: bb5ca498992132b49ac728ef806edf74, type: 3}
+  - {fileID: 8300000, guid: 13f7beef6f2898548a99daec04cdf7d7, type: 3}
+  - {fileID: 8300000, guid: 701d46e50fa04864ca5a49837608e6cd, type: 3}
+  _mixerGroup: {fileID: -1583498299911411118, guid: 774c425a401c48d4498059f78ef1cd43, type: 2}
   _noRepeats: 1
   _randomPitch: 1
-  _minPitch: 0.5
-  _maxPitch: 1.5
+  _minPitch: 0.8
+  _maxPitch: 1.2
   _volume: 1
   _loop: 0
-  _priority: 128
+  _priority: 16
   _stereoPan: 0
-  _spatialBlend: 0
+  _spatialBlend: 0.8

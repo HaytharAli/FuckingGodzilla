@@ -13,7 +13,11 @@ public class CartersController : MonoBehaviour
     [SerializeField] float bulletLifetime = 1.0f;
     [SerializeField] int maxBullets = 16;
 
-    [SerializeField] AudioClipRandomizer footsteps;
+    [SerializeField] AudioRandomizerContainer footsteps;
+    [SerializeField] AudioRandomizerContainer fireGun;
+
+    AudioClipRandomizer footstepsACR;
+    AudioClipRandomizer fireGunACR;
 
     [SerializeField] int playerNumber;
     [SerializeField] int characterNumber;
@@ -37,6 +41,11 @@ public class CartersController : MonoBehaviour
         onRoundStart += returnToSpawn;
         EventChad.instance.onRoundStart.AddListener(onRoundStart);
         inputThang = gameObject.GetComponent<InputSupervisor>();
+
+        footstepsACR = gameObject.AddComponent<AudioClipRandomizer>();
+        footstepsACR.ArcObj = footsteps;
+        fireGunACR = gameObject.AddComponent<AudioClipRandomizer>();
+        fireGunACR.ArcObj = fireGun;
     }
 
     public void Movement(Vector3 thumbstick)
@@ -75,7 +84,7 @@ public class CartersController : MonoBehaviour
         isCoroutineRunning = true;
         if (isMoving)
         {
-
+            footstepsACR.PlaySFX();
             yield return new WaitForSeconds(playerSpeed / 12.0f);
         }
         isCoroutineRunning = false;
@@ -86,6 +95,9 @@ public class CartersController : MonoBehaviour
         GameObject bulletClone = Instantiate(bullet, transform) as GameObject;
         Vector3 startPos = muzzle.transform.position;
         Vector3 targetPos = bulletTarget.transform.position;
+
+        fireGunACR.PlaySFX();
+
         bulletCount++;
         bool oneTimeCheck = false;
 
