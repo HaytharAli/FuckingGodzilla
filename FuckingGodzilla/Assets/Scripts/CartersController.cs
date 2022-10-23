@@ -151,7 +151,7 @@ public class CartersController : MonoBehaviour
     {
         if(collision.gameObject.tag == "bullet")
         {
-            Debug.Log("Piss Baby");
+            //Debug.Log("Piss Baby");
             inputThang.stopInput();
         }
     }

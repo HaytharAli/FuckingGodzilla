@@ -9,7 +9,7 @@ public class ActionTimeline : MonoBehaviour
     int currentActionIndex = 0;
     bool flag, playbackMode;
 
-    bool justSpawned;
+    bool justSpawned = true;
 
     UnityAction onRoundStart;
 
