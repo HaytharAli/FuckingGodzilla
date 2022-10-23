@@ -9,6 +9,8 @@ public class ActionTimeline : MonoBehaviour
     int currentActionIndex = 0;
     bool flag, playbackMode;
 
+    bool justSpawned;
+
     UnityAction onRoundStart;
 
     // Start is called before the first frame update
@@ -66,6 +68,12 @@ public class ActionTimeline : MonoBehaviour
 
     public void enablePlayback()
     {
+        if (justSpawned)
+        {
+            justSpawned = false;
+            return;
+        }
+
         playbackMode = true;
         currentActionIndex = 0;
     }
