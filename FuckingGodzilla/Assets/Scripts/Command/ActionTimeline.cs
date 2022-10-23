@@ -20,6 +20,8 @@ public class ActionTimeline : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log(actions.Count);
+
         if (playbackMode)
         {
             flag = true;
@@ -38,6 +40,11 @@ public class ActionTimeline : MonoBehaviour
                 }
             }
         }
+
+        if(actions.Count < currentActionIndex)
+        {
+            playbackMode = false;
+        }
     }
 
     public void record(CommandAbstract command, Vector3 direction)
@@ -52,5 +59,10 @@ public class ActionTimeline : MonoBehaviour
         ActionInstance instance = ScriptableObject.CreateInstance<ActionInstance>();
         instance.record(command);
         actions.Add(instance);
+    }
+
+    public void enablePlayback()
+    {
+        playbackMode = true;
     }
 }

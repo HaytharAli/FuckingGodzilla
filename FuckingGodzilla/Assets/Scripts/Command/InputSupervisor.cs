@@ -50,8 +50,8 @@ public class InputSupervisor : MonoBehaviour
     {
         movement.x = Input.GetAxis(leftHorizontal);
         movement.z = Input.GetAxis(leftVertical);
-        aiming.x = Input.GetAxis(rightHorizontal);
-        aiming.z = Input.GetAxis(rightVertical);
+        aiming.z = Input.GetAxis(rightHorizontal);
+        aiming.x = -Input.GetAxis(rightVertical);
         float RT = Input.GetAxis(rightTrigger);
 
         if(movement.magnitude > 0)
@@ -66,8 +66,8 @@ public class InputSupervisor : MonoBehaviour
         }
         if(aiming.magnitude > 0)
         {
-            aimCommand.execute();
-
+            aimCommand.execute(aiming);
+            timeline.record(aimCommand, aiming);
         }
     }
 }

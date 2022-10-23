@@ -25,6 +25,13 @@ public class CartersController : MonoBehaviour
     int bulletCount = 0;
     bool gunCooldown = false;
 
+    Vector3 spawnPoint = Vector3.zero;
+
+    private void Start()
+    {
+        //target = GameObject.Find("Targetting Point");
+    }
+
     public void Movement(Vector3 thumbstick)
     {
         Vector3 oldPos = transform.position;
@@ -41,9 +48,9 @@ public class CartersController : MonoBehaviour
             StartCoroutine(Footsteps());
     }
 
-    public void Aiming()
+    public void Aiming(Vector3 thumbstick)
     {
-        transform.Rotate(0, Input.GetAxis(axisName + "RS_hori") * playerLookSpeed * Time.deltaTime, 0);
+        transform.LookAt(transform.position + thumbstick);
     }
 
     public void Fire()
@@ -106,5 +113,11 @@ public class CartersController : MonoBehaviour
     public int PlayerNumber
     {
         get => playerNumber;
+    }
+
+    public void returnToSpawn()
+    {
+        spawnPoint.x = -8;
+        transform.position = spawnPoint;
     }
 }
