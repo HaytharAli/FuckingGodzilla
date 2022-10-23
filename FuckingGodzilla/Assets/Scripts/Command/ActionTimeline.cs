@@ -24,6 +24,12 @@ public class ActionTimeline : MonoBehaviour
 
         if (playbackMode)
         {
+            if (actions.Count < currentActionIndex + 1)
+            {
+                playbackMode = false;
+                return;
+            }
+
             flag = true;
             float currentMatchTime = TimeManager.instance.getCurrentTime();
 
@@ -39,11 +45,6 @@ public class ActionTimeline : MonoBehaviour
                     flag = false;
                 }
             }
-        }
-
-        if(actions.Count < currentActionIndex)
-        {
-            playbackMode = false;
         }
     }
 

@@ -16,13 +16,15 @@ public class InputSupervisor : MonoBehaviour
 
     Vector3 movement, aiming;
 
+    bool takeInput = true;
+
+
+
     private void Start()
     {
         timeline = gameObject.GetComponent<ActionTimeline>();
         controller = gameObject.GetComponent<CartersController>();
         playerNumber = controller.PlayerNumber;
-
-        Debug.Log(playerNumber);
 
         moveCommand = ScriptableObject.CreateInstance<MovementCommand>();
         moveCommand.AssignPlayer(playerNumber);
@@ -53,11 +55,15 @@ public class InputSupervisor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movement.x = Input.GetAxis(leftHorizontal);
-        movement.z = Input.GetAxis(leftVertical);
-        aiming.z = Input.GetAxis(rightHorizontal);
-        aiming.x = -Input.GetAxis(rightVertical);
-        float RT = Input.GetAxis(rightTrigger);
+        float RT = 0;
+        if (takeInput)
+        {
+            movement.x = Input.GetAxis(leftHorizontal);
+            movement.z = Input.GetAxis(leftVertical);
+            aiming.z = Input.GetAxis(rightHorizontal);
+            aiming.x = -Input.GetAxis(rightVertical);
+            RT = Input.GetAxis(rightTrigger);
+        }
 
         if(movement.magnitude > 0)
         {
@@ -74,5 +80,10 @@ public class InputSupervisor : MonoBehaviour
             aimCommand.execute(aiming);
             timeline.record(aimCommand, aiming);
         }
+    }
+
+    public void stopInput()
+    {
+        takeInput = false;
     }
 }
