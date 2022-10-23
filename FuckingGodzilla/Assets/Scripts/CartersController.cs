@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
@@ -9,6 +7,8 @@ public class CartersController : MonoBehaviour
 {
     /*[SerializeField]*/ float playerSpeed = 6.0f;
     /*[SerializeField]*/ float playerLookSpeed = 180.0f;
+
+    public GameObject bulletFUCKER;
 
     [SerializeField] float bulletLifetime = 1.0f;
     [SerializeField] int maxBullets = 16;
@@ -91,8 +91,9 @@ public class CartersController : MonoBehaviour
     }
     IEnumerator FireGun()
     {
-        Object bullet = AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Bullet.prefab", typeof(GameObject));
-        GameObject bulletClone = Instantiate(bullet, transform) as GameObject;
+        //Object bullet = AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Bullet.prefab", typeof(GameObject));
+
+        GameObject bulletClone = Instantiate(bulletFUCKER, transform) as GameObject;
         Vector3 startPos = muzzle.transform.position;
         Vector3 targetPos = bulletTarget.transform.position;
 

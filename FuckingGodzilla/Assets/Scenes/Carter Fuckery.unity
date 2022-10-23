@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -425,6 +425,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7951822063998953857, guid: d1f46b379bea7bc4ab880bfaae23052e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8135925997803411087, guid: d1f46b379bea7bc4ab880bfaae23052e, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.2
@@ -485,6 +489,10 @@ PrefabInstance:
       propertyPath: playerSpeed
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 8496529841873254394, guid: d1f46b379bea7bc4ab880bfaae23052e, type: 3}
+      propertyPath: bulletFUCKER
+      value: 
+      objectReference: {fileID: 1844294803}
     - target: {fileID: 8496529841873254394, guid: d1f46b379bea7bc4ab880bfaae23052e, type: 3}
       propertyPath: playerNumber
       value: 2
@@ -1216,6 +1224,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &1844294803 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1617082103409597952, guid: 56ec1faa59e71ae4482638a008f695e4, type: 3}
+  m_PrefabInstance: {fileID: 8481682607296659465}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1966395954
 GameObject:
   m_ObjectHideFlags: 0
@@ -1518,7 +1531,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1617082103409597952, guid: 56ec1faa59e71ae4482638a008f695e4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4788489637614882831, guid: 56ec1faa59e71ae4482638a008f695e4, type: 3}
       propertyPath: m_RootOrder
@@ -1635,6 +1648,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7951822063998953857, guid: d1f46b379bea7bc4ab880bfaae23052e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8135925997803411087, guid: d1f46b379bea7bc4ab880bfaae23052e, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.2
@@ -1695,6 +1712,10 @@ PrefabInstance:
       propertyPath: playerSpeed
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 8496529841873254394, guid: d1f46b379bea7bc4ab880bfaae23052e, type: 3}
+      propertyPath: bulletFUCKER
+      value: 
+      objectReference: {fileID: 1844294803}
     - target: {fileID: 8496529841873254394, guid: d1f46b379bea7bc4ab880bfaae23052e, type: 3}
       propertyPath: bulletLifetime
       value: 1
