@@ -11,27 +11,26 @@ public class InputSupervisor : MonoBehaviour
     FireCommand fireCommand;
     AimCommand aimCommand;
 
-    int playerNumber;
+    int playerNumber, characterNumber;
     string leftHorizontal, leftVertical, rightHorizontal, rightVertical, rightTrigger;
 
     Vector3 movement, aiming;
 
     bool takeInput = true;
 
-
-
     private void Start()
     {
         timeline = gameObject.GetComponent<ActionTimeline>();
         controller = gameObject.GetComponent<CartersController>();
         playerNumber = controller.PlayerNumber;
+        characterNumber = controller.CharacterNumber;
 
         moveCommand = ScriptableObject.CreateInstance<MovementCommand>();
-        moveCommand.AssignPlayer(playerNumber);
+        moveCommand.AssignPlayer(characterNumber);
         fireCommand = ScriptableObject.CreateInstance<FireCommand>();
-        fireCommand.AssignPlayer(playerNumber);
+        fireCommand.AssignPlayer(characterNumber);
         aimCommand = ScriptableObject.CreateInstance<AimCommand>();
-        aimCommand.AssignPlayer(playerNumber);
+        aimCommand.AssignPlayer(characterNumber);
 
         if (playerNumber == 1)
         {

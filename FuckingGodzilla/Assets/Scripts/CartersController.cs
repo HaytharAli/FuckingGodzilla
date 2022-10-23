@@ -15,6 +15,7 @@ public class CartersController : MonoBehaviour
     [SerializeField] AudioClipRandomizer footsteps;
 
     [SerializeField] int playerNumber = 1;
+    [SerializeField] int characterNumber = 1;
 
     [SerializeField] GameObject muzzle;
     [SerializeField] GameObject bulletTarget;
@@ -112,6 +113,13 @@ public class CartersController : MonoBehaviour
     public int PlayerNumber
     {
         get => playerNumber;
+        set { playerNumber = value; }
+    }
+
+    public int CharacterNumber
+    {
+        get => characterNumber;
+        set { characterNumber = value; }
     }
 
     public void returnToSpawn()
