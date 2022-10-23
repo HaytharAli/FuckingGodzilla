@@ -870,7 +870,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletLifetime: 1
   maxBullets: 16
-  footsteps: {fileID: 0}
+  footsteps: {fileID: 11400000, guid: 5e62943e689062747adba462fc5d4b91, type: 2}
+  fireGun: {fileID: 11400000, guid: 3e5467c83d1dd5347a237888984471ed, type: 2}
   playerNumber: 1
   characterNumber: 1
   muzzle: {fileID: 6494672985068151545}
@@ -899,6 +900,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70ed884f991675847b635acbb21bd09f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  takeInput: 1
 --- !u!65 &7255031483806840985
 BoxCollider:
   m_ObjectHideFlags: 0
