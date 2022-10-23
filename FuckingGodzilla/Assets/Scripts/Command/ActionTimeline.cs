@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ActionTimeline : MonoBehaviour
 {
@@ -8,13 +9,14 @@ public class ActionTimeline : MonoBehaviour
     int currentActionIndex = 0;
     bool flag, playbackMode;
 
-    //Reference to player script
-
+    UnityAction onRoundStart;
 
     // Start is called before the first frame update
     void Start()
     {
         playbackMode = false;
+        onRoundStart += enablePlayback;
+        EventChad.instance.onRoundStart.AddListener(onRoundStart);
     }
 
     // Update is called once per frame
@@ -65,5 +67,6 @@ public class ActionTimeline : MonoBehaviour
     public void enablePlayback()
     {
         playbackMode = true;
+        currentActionIndex = 0;
     }
 }

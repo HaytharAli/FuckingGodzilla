@@ -13,6 +13,4 @@ public class GameHost : MonoBehaviour
             instance = this;
         }
     }
-
-
 }

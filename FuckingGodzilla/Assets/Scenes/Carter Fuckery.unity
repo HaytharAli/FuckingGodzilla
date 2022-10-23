@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 259590618}
   - component: {fileID: 259590617}
   - component: {fileID: 259590619}
+  - component: {fileID: 259590620}
   m_Layer: 0
   m_Name: GameHost
   m_TagString: Untagged
@@ -182,83 +183,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onRoundStart:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 721174318}
-        m_TargetAssemblyTypeName: CartersController, Assembly-CSharp
-        m_MethodName: returnToSpawn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 721174317}
-        m_TargetAssemblyTypeName: ActionTimeline, Assembly-CSharp
-        m_MethodName: enablePlayback
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 259590617}
-        m_TargetAssemblyTypeName: TimeManager, Assembly-CSharp
-        m_MethodName: startRound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 644841511}
-        m_TargetAssemblyTypeName: CartersController, Assembly-CSharp
-        m_MethodName: returnToSpawn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 644841513}
-        m_TargetAssemblyTypeName: ActionTimeline, Assembly-CSharp
-        m_MethodName: enablePlayback
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+--- !u!114 &259590620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259590616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3dde9e063c12b44c9cefd41c37f650e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &644841510 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8496529841873254395, guid: d1f46b379bea7bc4ab880bfaae23052e, type: 3}
   m_PrefabInstance: {fileID: 1015214807}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &644841511 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8496529841873254394, guid: d1f46b379bea7bc4ab880bfaae23052e, type: 3}
-  m_PrefabInstance: {fileID: 1015214807}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 644841510}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fba0a0848b6d7f94fa167db361a385a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &644841513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -396,17 +338,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b8b9953465fc0d49a6272c0b817caba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &721174318 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8496529841873254394, guid: d1f46b379bea7bc4ab880bfaae23052e, type: 3}
-  m_PrefabInstance: {fileID: 8496529841616808277}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 721174313}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fba0a0848b6d7f94fa167db361a385a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1015214807
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -509,6 +440,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8496529841873254394, guid: d1f46b379bea7bc4ab880bfaae23052e, type: 3}
       propertyPath: playerNumber
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8496529841873254394, guid: d1f46b379bea7bc4ab880bfaae23052e, type: 3}
+      propertyPath: characterNumber
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8496529841873254395, guid: d1f46b379bea7bc4ab880bfaae23052e, type: 3}

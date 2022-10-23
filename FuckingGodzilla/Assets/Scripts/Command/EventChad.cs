@@ -5,7 +5,18 @@ using UnityEngine.Events;
 
 public class EventChad : MonoBehaviour
 {
-    [SerializeField] UnityEvent onRoundStart;
+    public static EventChad instance;
+
+    void Awake()
+    {
+        if (!instance)
+        {
+            instance = this;
+        }
+    }
+
+
+    [SerializeField] public UnityEvent onRoundStart;
 
     private void Update()
     {

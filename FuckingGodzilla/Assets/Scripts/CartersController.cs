@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CartersController : MonoBehaviour
 {
@@ -28,9 +29,12 @@ public class CartersController : MonoBehaviour
 
     Vector3 spawnPoint = Vector3.zero;
 
+    UnityAction onRoundStart;
+
     private void Start()
     {
-        //target = GameObject.Find("Targetting Point");
+        onRoundStart += returnToSpawn;
+        EventChad.instance.onRoundStart.AddListener(onRoundStart);
     }
 
     public void Movement(Vector3 thumbstick)

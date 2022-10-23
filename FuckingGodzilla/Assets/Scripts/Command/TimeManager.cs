@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TimeManager : MonoBehaviour
 {
     public static TimeManager instance;
     float currentTime;
+
+    UnityAction onRoundStart;
 
     void Awake()
     {
@@ -13,6 +16,12 @@ public class TimeManager : MonoBehaviour
         {
             instance = this;
         }
+    }
+
+    private void Start()
+    {
+        onRoundStart += startRound;
+        EventChad.instance.onRoundStart.AddListener(onRoundStart);
     }
 
     public void startRound()
