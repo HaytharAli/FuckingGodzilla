@@ -11,7 +11,7 @@ public class InputSupervisor : MonoBehaviour
     FireCommand fireCommand;
     AimCommand aimCommand;
 
-    int playerNumber = 1;
+    int playerNumber;
     string leftHorizontal, leftVertical, rightHorizontal, rightVertical, rightTrigger;
 
     Vector3 movement, aiming;
@@ -19,12 +19,17 @@ public class InputSupervisor : MonoBehaviour
     private void Start()
     {
         timeline = gameObject.GetComponent<ActionTimeline>();
-        controller = GameObject.Find("Player 1").GetComponent<CartersController>();
+        controller = gameObject.GetComponent<CartersController>();
         playerNumber = controller.PlayerNumber;
 
+        Debug.Log(playerNumber);
+
         moveCommand = ScriptableObject.CreateInstance<MovementCommand>();
+        moveCommand.AssignPlayer(playerNumber);
         fireCommand = ScriptableObject.CreateInstance<FireCommand>();
+        fireCommand.AssignPlayer(playerNumber);
         aimCommand = ScriptableObject.CreateInstance<AimCommand>();
+        aimCommand.AssignPlayer(playerNumber);
 
         if (playerNumber == 1)
         {

@@ -5,9 +5,9 @@ using UnityEngine;
 public class AimCommand : CommandAbstract
 {
     CartersController controller;
-    private void Awake()
+    public void AssignPlayer(int number)
     {
-        controller = GameObject.Find("Player 1").GetComponent<CartersController>();
+        controller = GameObject.Find("Player " + number).GetComponent<CartersController>();
     }
 
     public override void execute(Vector3 movement)

@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class MovementCommand : CommandAbstract
 {
-    CartersController cartersController;
+    CartersController controller;
 
-    private void Awake()
+    public void AssignPlayer(int number)
     {
-        cartersController = GameObject.Find("Player 1").GetComponent<CartersController>();
+        controller = GameObject.Find("Player " + number).GetComponent<CartersController>();
     }
 
     public override void execute(Vector3 movement)
     {
-        cartersController.Movement(movement);
+        controller.Movement(movement);
     }
 }

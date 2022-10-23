@@ -219,6 +219,70 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 644841511}
+        m_TargetAssemblyTypeName: CartersController, Assembly-CSharp
+        m_MethodName: returnToSpawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 644841513}
+        m_TargetAssemblyTypeName: ActionTimeline, Assembly-CSharp
+        m_MethodName: enablePlayback
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!1 &644841510 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8496529841873254395, guid: d1f46b379bea7bc4ab880bfaae23052e, type: 3}
+  m_PrefabInstance: {fileID: 1015214807}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &644841511 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8496529841873254394, guid: d1f46b379bea7bc4ab880bfaae23052e, type: 3}
+  m_PrefabInstance: {fileID: 1015214807}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 644841510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fba0a0848b6d7f94fa167db361a385a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &644841513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 644841510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b8b9953465fc0d49a6272c0b817caba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &644841514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 644841510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70ed884f991675847b635acbb21bd09f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &662429463
 GameObject:
   m_ObjectHideFlags: 0

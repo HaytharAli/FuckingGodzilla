@@ -68,7 +68,6 @@ public class CartersController : MonoBehaviour
         isCoroutineRunning = true;
         if (isMoving)
         {
-            //footsteps.PlaySFX();
 
             yield return new WaitForSeconds(playerSpeed / 12.0f);
         }
@@ -117,7 +116,14 @@ public class CartersController : MonoBehaviour
 
     public void returnToSpawn()
     {
-        spawnPoint.x = -8;
+        if(playerNumber == 1)
+        {
+            spawnPoint.x = -8;
+        }
+        else
+        {
+            spawnPoint.x = 8;
+        }
         transform.position = spawnPoint;
     }
 }
